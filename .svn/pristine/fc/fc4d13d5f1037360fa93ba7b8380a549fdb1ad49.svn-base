@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ <filter>
+  <filter-name>ConfigFilter</filter-name>
+  <filter-class>filter.ConfigFilter</filter-class>
+ </filter>
+ <filter-mapping>
+  <filter-name>ConfigFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+ </filter-mapping>
+ <servlet>
+  <servlet-name>RandomCodeServlet</servlet-name>
+ 
+  <servlet-class>servlet.RandomCodeServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>AdminLoginServlet</servlet-name>
+  <servlet-class>servlet.AdminLoginServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>AdminOrdersManager</servlet-name>
+  <servlet-class>servlet.AdminOrdersManager</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>AdminLogoutServlet</servlet-name>
+  <servlet-class>servlet.AdminLogoutServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>AdminUpdatePwdServlet</servlet-name>
+  <servlet-class>servlet.AdminUpdatePwdServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>AdminMemberEditServelt</servlet-name>
+  <servlet-class>servlet.AdminMemberEditServelt</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>ArticleManagerServlet</servlet-name>
+  <servlet-class>servlet.ArticleManagerServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>ArticleServlet</servlet-name>
+  <servlet-class>servlet.ArticleServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>AdminAddCommodityServlet</servlet-name>
+  <servlet-class>servlet.AdminAddCommodityServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>ServletAjaxType</servlet-name>
+  <servlet-class>servlet.ServletAjaxType</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>AtricleEditServlet</servlet-name>
+  <servlet-class>servlet.AtricleEditServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>AddTypeServlet</servlet-name>
+  <servlet-class>servlet.AddTypeServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>AdminCommodityTypeManageServlet</servlet-name>
+  <servlet-class>servlet.AdminCommodityTypeManageServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>AdminChangeOrdersStatesServlet</servlet-name>
+  <servlet-class>servlet.AdminChangeOrdersStatesServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>ConfigManagerServlet</servlet-name>
+  <servlet-class>servlet.ConfigManagerServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>ConfigManagerSerlvet</servlet-name>
+  <servlet-class>servlet.ConfigManagerSerlvet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>CommodityManageServlet</servlet-name>
+  <servlet-class>servlet.CommodityManageServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>getparentTypeServlet</servlet-name>
+  <servlet-class>servlet.getparentTypeServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberLoginServlet</servlet-name>
+  <servlet-class>servlet.MemberLoginServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>RegisterServlet</servlet-name>
+  <servlet-class>servlet.RegisterServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberShopServlet</servlet-name>
+  <servlet-class>servlet.MemberShopServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberFlowerCateGory</servlet-name>
+  <servlet-class>servlet.MemberFlowerCateGory</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>IndexPage</servlet-name>
+  <servlet-class>servlet.IndexPage</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>MemberDetailServlet</servlet-name>
+  <servlet-class>servlet.MemberDetailServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>ShoppingLoginServlet</servlet-name>
+  <servlet-class>servlet.ShoppingLoginServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberOrder_SendServlet</servlet-name>
+  <servlet-class>servlet.MemberOrder_SendServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>memberArticleServlet</servlet-name>
+  <servlet-class>servlet.memberArticleServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberArticleNameSevlet</servlet-name>
+  <servlet-class>servlet.MemberArticleNameSevlet</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberSalesRankingServlet</servlet-name>
+  <servlet-class>servlet.MemberSalesRankingServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>MemberCenterModifyEmail</servlet-name>
+  <servlet-class>servlet.MemberCenterModifyEmail</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberCakeCateGory</servlet-name>
+  <servlet-class>servlet.MemberCakeCateGory</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberGiftCateGory</servlet-name>
+  <servlet-class>servlet.MemberGiftCateGory</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>MemberCenterModifyPWD</servlet-name>
+  <servlet-class>servlet.MemberCenterModifyPWD</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberMemberGiftCateGory</servlet-name>
+  <servlet-class>servlet.MemberMemberGiftCateGory</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberSend_infoServlet</servlet-name>
+  <servlet-class>servlet.MemberSend_infoServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>MemberCenterModifyInfomation</servlet-name>
+  <servlet-class>servlet.MemberCenterModifyInfomation</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>MemberCommentServlet</servlet-name>
+  <servlet-class>servlet.MemberCommentsServlet</servlet-class>
+ </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MemberSubmitOrdersServlet</servlet-name>
+    <servlet-class>servlet.MemberSubmitOrdersServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MemberCommentsServlet</servlet-name>
+    <servlet-class>servlet.MemberCommentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MemberOrderServlet</servlet-name>
+    <servlet-class>servlet.MemberOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MemberGiftServlet</servlet-name>
+    <servlet-class>servlet.MemberGiftServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MemberSearchServlet</servlet-name>
+    <servlet-class>servlet.MemberSearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberSearchServlet</servlet-name>
+    <url-pattern>/member/MemberSearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>member_record_recordServlet</servlet-name>
+    <servlet-class>servlet.member_record_recordServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>member_record_detailServlet</servlet-name>
+    <servlet-class>servlet.member_record_detailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MemberCenterManageReceiveAddr</servlet-name>
+    <servlet-class>servlet.MemberCenterManageReceiveAddr</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MemberPayServlet</servlet-name>
+    <servlet-class>servlet.MemberPayServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>member_record_comments</servlet-name>
+    <servlet-class>servlet.member_record_comments</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Menber_record_success</servlet-name>
+    <servlet-class>servlet.Menber_record_success</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MemberAddCommentServlet</servlet-name>
+    <servlet-class>servlet.MemberAddCommentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>member_comments_servlet</servlet-name>
+    <servlet-class>servlet.member_comments_servlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OrderReview_List_Servlet</servlet-name>
+    <servlet-class>servlet.OrderReview_List_Servlet</servlet-class>
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>RandomCodeServlet</servlet-name>
+  <url-pattern>/RandomCodeServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AddTypeServlet</servlet-name>
+  <url-pattern>/admin/AddTypeServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AtricleEditServlet</servlet-name>
+  <url-pattern>/admin/AtricleEditServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AdminLoginServlet</servlet-name>
+  <url-pattern>/admin/AdminLoginServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AdminLogoutServlet</servlet-name>
+  <url-pattern>/admin/AdminLogoutServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AdminUpdatePwdServlet</servlet-name>
+  <url-pattern>/admin/AdminUpdatePwdServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AdminMemberEditServelt</servlet-name>
+  <url-pattern>/admin/AdminMemberEditServelt</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ArticleManagerServlet</servlet-name>
+  <url-pattern>/admin/ArticleManagerServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ArticleServlet</servlet-name>
+  <url-pattern>/admin/ArticleServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AdminAddCommodityServlet</servlet-name>
+  <url-pattern>/admin/AdminAddCommodityServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ServletAjaxType</servlet-name>
+  <url-pattern>/admin/ServletAjaxType</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AdminOrdersManager</servlet-name>
+  <url-pattern>/admin/AdminOrdersManager</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AdminCommodityTypeManageServlet</servlet-name>
+  <url-pattern>/admin/AdminCommodityTypeManageServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AdminChangeOrdersStatesServlet</servlet-name>
+  <url-pattern>/admin/AdminChangeOrdersStatesServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ConfigManagerServlet</servlet-name>
+  <url-pattern>/admin/ConfigManagerServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ConfigManagerSerlvet</servlet-name>
+  <url-pattern>/admin/ConfigManagerSerlvet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>CommodityManageServlet</servlet-name>
+  <url-pattern>/admin/CommodityManageServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>getparentTypeServlet</servlet-name>
+  <url-pattern>/getparentTypeServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberLoginServlet</servlet-name>
+  <url-pattern>/member/MemberLoginServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>RegisterServlet</servlet-name>
+  <url-pattern>/member/RegisterServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberShopServlet</servlet-name>
+  <url-pattern>/member/MemberShopServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberFlowerCateGory</servlet-name>
+  <url-pattern>/member/MemberFlowerCateGory</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>IndexPage</servlet-name>
+  <url-pattern>/member/IndexPage</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberDetailServlet</servlet-name>
+  <url-pattern>/member/MemberDetailServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ShoppingLoginServlet</servlet-name>
+  <url-pattern>/member/ShoppingLoginServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberOrder_SendServlet</servlet-name>
+  <url-pattern>/member/MemberOrder_SendServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>memberArticleServlet</servlet-name>
+  <url-pattern>/member/memberArticleServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberArticleNameSevlet</servlet-name>
+  <url-pattern>/member/MemberArticleNameSevlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberSalesRankingServlet</servlet-name>
+  <url-pattern>/member/MemberSalesRankingServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberCenterModifyEmail</servlet-name>
+  <url-pattern>/member/MemberCenterModifyEmail</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberCakeCateGory</servlet-name>
+  <url-pattern>/member/MemberCakeCateGory</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberGiftCateGory</servlet-name>
+  <url-pattern>/member/MemberGiftCateGory</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberCenterModifyPWD</servlet-name>
+  <url-pattern>/member/MemberCenterModifyPWD</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberMemberGiftCateGory</servlet-name>
+  <url-pattern>/member/MemberMemberGiftCateGory</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberSend_infoServlet</servlet-name>
+  <url-pattern>/member/MemberSend_infoServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberCenterModifyInfomation</servlet-name>
+  <url-pattern>/member/MemberCenterModifyInfomation</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MemberCommentServlet</servlet-name>
+  <url-pattern>/member/MemberCommentsServlet</url-pattern>
+ </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MemberSubmitOrdersServlet</servlet-name>
+    <url-pattern>/member/MemberSubmitOrdersServlet</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>MemberCommentServlet</servlet-name>
+    <url-pattern>/member/MemberCommentServlet</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>MemberOrderServlet</servlet-name>
+    <url-pattern>/member/MemberOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MemberGiftServlet</servlet-name>
+    <url-pattern>/member/MemberGiftServlet</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>member_record_recordServlet</servlet-name>
+    <url-pattern>/member/member_record_recordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>member_record_detailServlet</servlet-name>
+    <url-pattern>/member/member_record_detailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MemberCenterManageReceiveAddr</servlet-name>
+    <url-pattern>/member/MemberCenterManageReceiveAddr</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MemberPayServlet</servlet-name>
+    <url-pattern>/member/MemberPayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>member_record_comments</servlet-name>
+    <url-pattern>/member/member_record_comments</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Menber_record_success</servlet-name>
+    <url-pattern>/member/Menber_record_success</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MemberAddCommentServlet</servlet-name>
+    <url-pattern>/member/MemberAddCommentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>member_comments_servlet</servlet-name>
+    <url-pattern>/member/member_comments_servlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderReview_List_Servlet</servlet-name>
+    <url-pattern>/member/OrderReview_List_Servlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>alipay_returnServlet</servlet-name>
+  	<servlet-class>servlet.alipay_returnServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>alipay_returnServlet</servlet-name>
+  	<url-pattern>/alipay_returnServlet</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+  	<servlet-name>alipay_notifyServlet</servlet-name>
+  	<servlet-class>servlet.alipay_notifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>alipay_notifyServlet</servlet-name>
+  	<url-pattern>/alipay_notifyServlet</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+  	<servlet-name>QueryOrderListServlet</servlet-name>
+  	<servlet-class>servlet.QueryOrderListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>QueryOrderListServlet</servlet-name>
+  	<url-pattern>/QueryOrderListServlet</url-pattern>
+  </servlet-mapping>
+  <!--增加两个severlet-->
+  <servlet>
+  <servlet-name>ShoppingCarServlet</servlet-name>
+  <servlet-class>servlet.ShoppingCarServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+  <servlet-name>ShoppingCarServlet</servlet-name>
+  <url-pattern>/member/ShoppingCarServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  
+  
+  <servlet-name>ShoppingcarRequestServlet</servlet-name>
+  <servlet-class>servlet.ShoppingcarRequestServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+  <servlet-name>ShoppingcarRequestServlet</servlet-name>
+  <url-pattern>/member/ShoppingcarRequestServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+
+ <welcome-file-list>
+  <welcome-file>index.jsp</welcome-file>
+ </welcome-file-list>
+ <login-config>
+  <auth-method>BASIC</auth-method>
+ </login-config>
+</web-app>

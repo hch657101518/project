@@ -1,0 +1,200 @@
+<%@ page language="java" import="java.util.*,entity.*,util.*" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+<script>
+window.setInterval("getShopNum()", 1000);//定时器
+function getShopNum(){
+	$.post("MemberShopServlet",{type:"getNum"},function(data){
+		$("#shopNum").html("("+data+")");
+	});
+}
+
+
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="zh-cn" http-equiv="Content-Language">
+<title>用户登录-中国鲜花礼品网_中国鲜花网</title>
+<link href="CSS/base.css" rel="stylesheet" type="text/css">
+<link href="CSS/login_reg.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 7.]>
+<script type="text/javascript">
+document.execCommand("BackgroundImageCache",false,true);
+</script>
+<![endif]-->
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+.STYLE3 {color: #999999}
+-->
+    </style>
+</head>
+
+<body>
+<div id="header2">
+<div class="ntop">
+<div class="ntop_top">
+<div class="logo"><a href="IndexPage"><img src="Images/lihelogo.gif" alt="中国鲜花礼品网" border="0" width="216" height="68" /></a></div>
+      <div class="top_txtbox"> 
+        <div class="top_toolbox"> 
+          <div class="inbox"><a href="memberCenter.jsp" rel="nofollow" target="_blank">我的账户</a> 
+             
+            | <a href="/help/" rel="nofollow" target="_blank">帮助中心</a> | <a href="ShoppingCarServlet?cmd=list&log=1&userId=${sessionScope.loginMember.memberId}" rel="nofollow" target="_blank">购物车</a>
+            | <a href="http://www.hua.com/" onclick="window.external.addFavorite(this.href,this.title);return false;" title='中国鲜花礼品网 www.hua.com - 销量稳居行业第一' rel="sidebar">收藏本站</a> 
+            <span class="color_666"><font color="#FF9900">●</font> 中国鲜花礼品网,领先的中国鲜花网</span> 
+          </div>
+        </div>
+        <div class="helloinfo">
+        <span class="tserver">
+        <a target=blank href=tencent://message/?uin=<%=ConfigUtil.getConfig("客服QQ").get(0).getConfigValue() %>&Site=&Menu=yes><img border="0" SRC=http://wpa.qq.com/pa?p=1:<%=ConfigUtil.getConfig("客服QQ").get(0).getConfigValue() %>:7alt="点击这里给我发消息"></a>
+        </span> 
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+<!-- TOP部分结束End -->
+
+
+<!-- TOP当前位置start -->
+<div class="topdqwz_box">
+<div class="intopdqwz_box">
+<h4><a href="IndexPage" title="首页">首页</a></h4>
+<span>用户登录</span>
+</div>
+
+</div>
+
+<!-- TOP部分结束End -->
+
+
+<div class="loginbodybox">
+<div class="left">
+
+<div class="title">登录中国鲜花礼品网</div>
+<link href="CSS/LoginAndReg.css" type="text/css" rel="stylesheet">
+<script language="javascript">
+ function Check_Email(){
+    String.prototype.Trim=function(){
+	return this.replace(/(^\s*)|(\s*$)/g,"");  
+	  };
+    var Email=document.getElementById("txtEmail").value.Trim();
+    if(Email.length<1){
+		 alert("用户名E-mail为必填项，请输入你的Email地址！");
+		 Email.focus();
+		 return false;
+	}else if (!/^[\w-]+(\.[\w-]+)*@[\w-]+(\.(\w)+)*(\.(\w){2,3})$/.test(Email)){
+		 alert("请输入有效的Email地址！");
+		 Email.focus();
+		 return false;
+	}
+	return true;
+   }
+   
+   function Check_Password(){	
+	var Password = document.getElementById("txtPassWord");
+    if(Password.value.length<6){
+        alert("密码为必填项，密码不能小于6位！");
+        document.getElementById("txtPassWord").focus();
+        return false;
+    }
+	return true;
+   }
+   
+   function Check_Code(){	
+	var Validate_Code = document.getElementById("txtValidate_Code");
+    if(Validate_Code.value.length<4){
+        alert("验证码为必填项，验证码应等于4位！");
+        document.getElementById("txtValidate_Code").focus();
+        return false;
+    }
+	return true;
+   }
+   
+//提交再次验证
+function Check_User_Login(){
+	if (!Check_Email()) return false;
+	if (!Check_Password()) return false;
+	if (!Check_Code()) return false;
+	return true;;
+}
+
+//function ChangeImg1(){
+    //$("#Img1").attr("src","/system/checkcode.asp");
+//}
+
+function ChangeImg1(){ 
+document.getElementById('Img1').src = "../RandomCodeServlet?dd="+new Date();
+} 
+
+</script>
+
+<form method="post" action="MemberLoginServlet?from=${param.from }" name="myform" id="myform" onsubmit="return Check_User_Login();">
+ <input name="action" value="login" type="hidden">
+<table align="center" border="0" cellpadding="3" cellspacing="0" width="550">
+  
+  <tbody><tr>
+    <td align="right" width="143">E-mail地址：</td>
+    <td colspan="4" align="left"><label><input name="txtEmail" onchange="Check_Email()" class="logininput" id="txtEmail" tabindex="1" type="text">
+    </label></td>
+  </tr>
+  <tr>
+    <td align="right">密码：</td>
+    <td colspan="4" align="left"><input class="logininput" id="txtPassWord" name="txtPassWord" onchange="Check_Password()" maxlength="16" value="" tabindex="2" type="password">
+  </tr>
+  <tr>
+    <td align="right">验证码：</td>
+    <td colspan="4" align="left"><input name="txtValidate_Code" class="logininput2" id="txtValidate_Code" style="width:70px;" onchange="Check_Code();" maxlength="4" tabindex="3" type="text">
+      <img name="Img1" id="Img1" src="../RandomCodeServlet" align="absmiddle"> <a href="javascript:ChangeImg1()"><span class="STYLE3">看不清，换一张</span></a></td>
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td align="right" width="20"><label><input name="name_cookies" value="setcookies" tabindex="4" type="checkbox"></label></td>
+    <td align="left" width="76">记住用户名</td>
+    <td align="right" width="20">&nbsp;</td>
+    <td align="left" width="261">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="4" align="left"><label><input name="Submit" value=" " class="login_btn" tabindex="5" type="submit">
+
+    </label></td>
+  </tr>
+</tbody></table>
+</form>
+</div>
+
+
+<div class="right">
+<div class="contenttext">
+<span style="font-weight:bold">还不是中国鲜花礼品网用户？</span><br>
+快捷方便的免费注册，让你立刻尽享中国鲜花礼品网提
+供的各项优惠及服务... 
+</div>
+<div class="contentbtn">
+
+<a href="register.jsp" title="快速注册新用户" tabindex="6">快速注册新用户</a>
+
+</div>
+<div style=" margin:12px auto 6px auto; height:1px; border-top:1px solid #999999; width:99%; padding:0px; line-height:1px;"></div>
+<div style="margin-top:0px;">
+<p style=" color:#61645a;">使用合作网站账号登录中国鲜花礼品网:</p>
+<a href="http://www.hua.com/login/AlipayQuicklogin/" title="支付宝快捷登录" target="_blank" tabindex="6"><img src="Images/logo.gif" alt="支付宝快捷登录" align="middle" border="0"></a>&nbsp;<a href="http://www.hua.com/login/139fanli/default.aspx" title="139邮箱登录" target="_blank" tabindex="6"><img src="Images/logo_002.gif" alt="139邮箱登录" align="middle" border="0"></a>&nbsp;<a href="http://www.hua.com/login/kaixin/default.aspx" title="开心网快捷登陆" target="_blank" tabindex="6"><img src="Images/logo_002.jpg" alt="开心网快捷登陆" align="middle" border="0"></a></div>
+<div style=" height:30px; margin-top:3px; ">
+<a href="http://www.hua.com/login/qqQuicklogin/" title="QQ快捷登录" target="_blank" tabindex="6"><img src="Images/login.png" alt="QQ快捷登录" align="middle" border="0"></a>&nbsp;<a href="http://www.hua.com/login/renren/" title="人人网快捷登录" target="_blank" tabindex="6"><img src="Images/login.gif" alt="QQ快捷登录" align="middle" border="0" height="25" width="92"></a></div>
+</div>
+</div>
+
+
+<!-- 版权开始 -->
+<%@include file="foot.jsp" %>
+<script type="text/javascript">document.getElementById("Email").focus()</script>
+
+
+</body></html>

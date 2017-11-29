@@ -1,0 +1,43 @@
+
+	var i=1;
+	var myTimer;
+	function showImg() {
+		var img=document.getElementById("outOne");
+		img.src="alipay/image/outSingle"+i+".jpg";
+		for(index=1;index<=5;index++){
+			if(index==i){
+				$("#li"+i).css("backgroundColor","white");
+			}else{
+				$("#li"+index).css("backgroundColor","scrollbar");
+			}
+		}
+		$("#li"+i).css("backgroundColor","white");
+		i++;
+		if(i>5){
+			i=1;
+		}
+		myTimer=setTimeout("showImg()",2000);
+	}
+	
+	function stopImg() {
+		clearTimeout(myTimer);
+	}
+	
+	function linkTo(x) {
+		i=x;
+		clearTimeout(myTimer);
+		showImg();
+	}
+	
+	function stopMarquee() {
+		document.getElementById("marqueeImg").stop();
+	}
+	
+	function startMarquee() {
+		document.getElementById("marqueeImg").start();
+	}
+
+	
+	
+	
+	

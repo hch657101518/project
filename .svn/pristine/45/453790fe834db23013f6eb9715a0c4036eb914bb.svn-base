@@ -1,0 +1,16 @@
+package dao;
+
+import entity.Commodity;
+
+
+public class text{
+	public static void main(String[] args) {
+		CommodityDao dao =  new CommodityDao();
+		Commodity com = new Commodity();
+		com.setCommodityId(62);
+		com.setCommodityAddedtime("2011-2-5 14:24:25");
+		System.out.println(dao.updateByCommodity(com));
+	}
+ 
+}
+

@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+*{
+	margin: 0px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+
+
+
+#rollImg{
+	text-align: center;
+}
+
+#outOne{
+	width: 600px;
+	height: 300px;
+}
+
+
+#imgNumber{
+	text-align: center;
+	margin-top: 20px;
+}
+
+
+#imgNumber li{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid red;
+	line-height: 30px;
+	text-align: center;
+	background-color: scrollbar;
+}
+

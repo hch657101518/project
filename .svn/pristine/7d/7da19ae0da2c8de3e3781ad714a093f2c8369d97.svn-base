@@ -1,0 +1,140 @@
+<%@ page language="java" import="java.util.*,entity.*,util.*" pageEncoding="utf-8" contentType="text/html; charset=utf-8"%>
+<%
+if(!("开放".equals(ConfigUtil.getConfig("网站是否开放注册").get(0).getConfigValue()))){
+	out.print("<script>alert('网站暂不开放注册！');history.go(-1);</script>");
+}
+
+
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<script>
+window.setInterval("getShopNum()", 1000);//定时器
+function getShopNum(){
+	$.post("MemberShopServlet",{type:"getNum"},function(data){
+		$("#shopNum").html("("+data+")");
+	});
+}
+
+
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>注册会员-中国鲜花礼品网_中国鲜花网</title>
+<link href="CSS/base.css" rel="stylesheet" type="text/css" />
+<link href="CSS/login_reg.css" rel="stylesheet" type="text/css" />
+	<script defer src="JS/jquery-1.3.2.min.js" type="text/javascript"></script>
+	<script defer src="S/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script defer src="JS/animated-menu.js" type="text/javascript"></script>
+<link href="CSS/LoginAndReg.css" type="text/css" rel="stylesheet" />
+<script src="JS/Check_Reg.js" language="javascript"></script>
+    <style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+.STYLE3 {color: #999999}
+-->
+    </style>
+    
+</head>
+
+<body>
+<div id="header2">
+<div class="ntop">
+<div class="ntop_top">
+<div class="logo"><a href="IndexPage"><img src="Images/lihelogo.gif" alt="中国鲜花礼品网" border="0" width="216" height="68" /></a></div>
+      <div class="top_txtbox"> 
+        <div class="top_toolbox"> 
+          <div class="inbox"><a href="memberCenter.jsp" rel="nofollow" target="_blank">我的账户</a> 
+            | <a href="/help/order_query.asp" rel="nofollow" target="_blank">订单查询</a> 
+            | <a href="/help/" rel="nofollow" target="_blank">帮助中心</a> | <a href="ShoppingCarServlet?cmd=list&log=1&userId=${sessionScope.loginMember.memberId}" rel="nofollow" target="_blank">购物车</a>
+            | <a href="http://www.hua.com/" onclick="window.external.addFavorite(this.href,this.title);return false;" title='中国鲜花礼品网 www.hua.com - 销量稳居行业第一' rel="sidebar">收藏本站</a> 
+            <span class="color_666"><font color="#FF9900">●</font> 中国鲜花礼品网,领先的中国鲜花网</span> 
+          </div>
+        </div>
+        <div class="helloinfo">
+        <span class="tserver">
+        <a target=blank href=tencent://message/?uin=<%=ConfigUtil.getConfig("客服QQ").get(0).getConfigValue() %>&Site=&Menu=yes><img border="0" SRC=http://wpa.qq.com/pa?p=1:<%=ConfigUtil.getConfig("客服QQ").get(0).getConfigValue() %>:7alt="点击这里给我发消息"></a>
+        </span> 
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+<!-- TOP部分结束End -->
+<script >
+function ChangeImg1(){ 
+document.getElementById('Img1').src = "../RandomCodeServlet?dd="+new Date();
+} 
+</script>
+
+<!-- TOP当前位置start -->
+<div class="topdqwz_box">
+<div class="intopdqwz_box">
+<h4><a href="IndexPage" title="首页">首页</a></h4>
+<span>注册新用户</span>
+</div>
+
+</div>
+
+<!-- TOP部分结束End -->
+
+<div class="regbodybox">
+<div class="title">注册新用户——填写注册信息，设置用户名和密码</div>
+<div class="content">
+<form action="RegisterServlet" method="post" name="myform" id="myform" onsubmit="return Check_User_Login()" >
+<input name="action" type="hidden" value="reg" />
+  <table width="80%" border="0" cellspacing="0" cellpadding="3" >
+    <tr>
+      <td width="35%" align="right" valign="top"><span class="f14px">请填写您的Email地址：</span></td>
+      <td width="15%" align="left" valign="top" id="input_email">
+        <input name="Email" type="text" class="logininput" id="Email" onblur="Check_Email()" /><br />
+        <span class="Reginput" id="span_CheckUsername"></span></td>
+      <td width="55%" align="left" class="sty04" valign="top"><span class="STYLE1">*</span> <span class="STYLE3">请填写有效的Email地址作为下次登录的用户名;同时发送帐户信息、订单到款和送达通知等</span></td>
+    </tr>
+     <tr>
+      <td align="right" valign="top"><span class="f14px">请设定密码：</span></td>
+      <td align="left" valign="top"><input type="password" class="logininput" id="PassWord" name="PassWord" maxlength="16" onchange="ChangePassword();"  value="" /><br /><span id="CheckRePassWord" class="Reginput" ></span></td>
+	  <td align="left" valign="top" class="sty03 sty04" ><span class="sty04"><span class="STYLE1">*</span> </span><span class="STYLE3">密码请设为6-16位字母或数字</span></td>
+    </tr>
+    <tr>
+      <td align="right" valign="top"><span class="f14px">请再次输入设定密码：</span></td>
+      <td align="left" valign="top"><input type="password" id="RexPassWord" class="logininput" name="RexPassWord"  maxlength="16" onchange="Check_RePassWord();" value="" /><br /><span id="ReCheckRePassWord" class="Reginput" ></span></td>
+	  <td align="left" valign="top">　</td>
+    </tr>
+
+ <tr>
+    <td align="right">验证码：</td>
+    <td colspan="4" align="left"><input name="Validate_Code" class="logininput2" id="Validate_Code" style="width:70px;" onchange="Check_Code();" maxlength="4" tabindex="3" type="text">
+      <img name="Img1" id="Img1" src="../RandomCodeServlet" align="absmiddle"> <a href="javascript:ChangeImg1()"><span class="STYLE3">看不清，换一张</span></a></td>
+  </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="left"><span class="reg_postbtnbox">
+        <input name="Input" type="submit" value=" " class="regpost_btn"/>
+      </span></td><td align="right">&nbsp;</td>
+    </tr>
+
+  </table></form>
+  </div>
+</div>
+
+
+<div class="clear"></div>
+</div>
+
+
+
+
+<!-- 版权开始 -->
+<!-- 版权开始 -->
+<%@include file="foot.jsp" %>
+<script type="text/javascript">document.getElementById("Email").focus()</script>
+
+
+</body>
+</html>

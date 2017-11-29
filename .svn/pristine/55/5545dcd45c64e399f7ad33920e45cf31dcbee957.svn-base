@@ -1,0 +1,103 @@
+@CHARSET "UTF-8";
+
+*{
+	margin: 0px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+#header{
+	height: 100px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	line-height: 100px;
+}
+
+#main{
+	width: 900px;
+	height: 1000px;
+	margin-left: 200px;
+	margin-top: 30px;
+	border: 1px solid gray;
+	text-align: center;
+}
+
+#box1{
+	display:inline-block;
+	width: 800px;
+	height: 500px;
+	text-align: center;
+	border: 1px solid gray; 
+}
+
+/* #box2{
+	display:inline-block;
+	width: 800px;
+	height: 400px;
+	text-align: center;
+	border: 1px solid red;
+}
+
+#box3{
+	display:inline-block;
+	width: 800px;
+	height: 400px;
+	text-align: center;
+	border: 1px solid green;
+}
+
+#box4{
+	display:inline-block;
+	width: 800px;
+	height: 400px;
+	text-align: center;
+	border: 1px solid yellow;
+}
+
+#box5{
+	display:inline-block;
+	width: 800px;
+	height: 400px;
+	text-align: center;
+	border: 1px solid purple;
+	line-height: 360px;
+} */
+
+
+
+
+#rollImg{
+	text-align: center;
+}
+
+#note_rollImg{
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+}
+
+#outOne{
+	width: 600px;
+	height: 300px;
+}
+
+
+#imgNumber{
+	text-align: center;
+	margin-top: 20px;
+}
+
+
+#imgNumber li{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid red;
+	line-height: 30px;
+	text-align: center;
+}
+

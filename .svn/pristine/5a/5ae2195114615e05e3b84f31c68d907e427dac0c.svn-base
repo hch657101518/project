@@ -1,0 +1,53 @@
+package dao;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import entity.Orders;
+
+import util.JDBCUtils;
+
+public class NewOrderDao {
+	
+	JDBCUtils jdbc=new JDBCUtils();
+	
+	public NewOrderDao() {
+		jdbc.getConnection();
+	}
+	
+	public boolean deleteOrder(String orderId){
+		String sql1="delete from ordersdet where ordersId=?";
+		String sql="delete from orders where ordersId=?";
+		ArrayList<Object> params=new ArrayList<Object>();
+		params.add(orderId);
+		boolean boo = false;
+		try {
+			boolean b = jdbc.updateByPreparedStatement(sql1, params);
+			if(b){
+				boo = jdbc.updateByPreparedStatement(sql, params);
+			}
+			boo = jdbc.updateByPreparedStatement(sql, params);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return boo;
+	}
+	
+	
+	public Orders findOrder(String orderId){
+		String sql="select * from orders where ordersId=?";
+		ArrayList<Object> params=new ArrayList<Object>();
+		params.add(orderId);
+		Orders orders=null;
+		try {
+			orders = jdbc.findSimpleRefResult(sql, params, Orders.class);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return orders;
+	}
+	
+	
+}

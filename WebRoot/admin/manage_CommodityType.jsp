@@ -1,0 +1,311 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"
+	contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>商品类型管理</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	height: 1000px;
+}
+
+.STYLE1 {
+	font-size: 14px
+}
+
+.STYLE3 {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.STYLE4 {
+	color: #03515d;
+	font-size: 14px;
+}
+-->
+</style>
+
+<script>
+var  highlightcolor='#c1ebff';
+//此处clickcolor只能用win系统颜色代码才能成功,如果用#xxxxxx的代码就不行,还没搞清楚为什么:(
+var  clickcolor='#51b2f6';
+function  changeto(){
+source=event.srcElement;
+if  (source.tagName=="TR"||source.tagName=="TABLE")
+return;
+while(source.tagName!="TD")
+source=source.parentElement;
+source=source.parentElement;
+cs  =  source.children;
+//alert(cs.length);
+if  (cs[1].style.backgroundColor!=highlightcolor&&source.id!="nc"&&cs[1].style.backgroundColor!=clickcolor)
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor=highlightcolor;
+}
+}
+
+function  changeback(){
+if  (event.fromElement.contains(event.toElement)||source.contains(event.toElement)||source.id=="nc")
+return
+if  (event.toElement!=source&&cs[1].style.backgroundColor!=clickcolor)
+//source.style.backgroundColor=originalcolor
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor="";
+}
+}
+
+function  clickto(){
+	source=event.srcElement;
+	if  (source.tagName=="TR"||source.tagName=="TABLE")
+	return;
+	while(source.tagName!="TD")
+	source=source.parentElement;
+	source=source.parentElement;
+	cs  =  source.children;
+	//alert(cs.length);
+	if  (cs[1].style.backgroundColor!=clickcolor&&source.id!="nc")
+	for(i=0;i<cs.length;i++){
+		cs[i].style.backgroundColor=clickcolor;
+	}
+	else
+	for(i=0;i<cs.length;i++){
+		cs[i].style.backgroundColor="";
+	}
+}
+
+function showMsg(obj){
+	var pid=obj.options[obj.selectedIndex].value;
+	location="AdminCommodityTypeManageServlet?pid="+pid;
+}
+
+//全选、全不选
+function checkAll(selected){
+	var a=document.getElementsByName("checkbox2")
+	for(var i=0;i<a.length;i++){
+		a[i].checked=selected;
+	}
+}
+
+//反选
+function opsit(){
+	var a=document.getElementsByName("checkbox2");
+	for(var i=0;i<a.length;i++){
+		a[i].checked=a[i].checked?false:true;
+		/*a[i].checked=!a[i].checked;*/
+	}
+}
+
+//批量删除
+function deleteMul(){
+	if(!confirm("确定删除所有勾选项？"))
+		return false;
+	var num=0;
+	var chObjs = document.getElementsByName("checkbox2");
+	var str="";
+	for(var i=0;i<chObjs.length;i++){
+		if(chObjs[i].checked){
+			str+=document.getElementById(("divTypeId"+(chObjs[i].id).substr(2))).innerHTML;
+			num+=1;
+		}
+	}
+	if(num==0){
+		return false;
+	}
+	location="AdminCommodityTypeManageServlet?type=deleteMul&str="+str;
+}
+
+//修改类型信息
+function edit(id){
+	var typeId=(document.getElementById(id).innerHTML).substring(1);
+	var width=screen.width;
+	var height=screen.height;
+	var x=(height-10)/2;
+	var y=(width-300)/2;
+	var str;
+	
+
+		alert(111);
+	if( document.all ) //IE 
+	{ 
+		feature="dialogWidth:300px;dialogHeight:200px;status:no;help:no"; 
+		str=window.showModalDialog(url,null,feature); 
+		alert(111);
+	} 
+	else 
+	{ 
+		//modelessDialog可以将modal换成dialog=yes 
+		feature ="width=300,height=200,left="+x+",top="+y+",menubar=no,toolbar=no,location=no,"; 
+		feature+="scrollbars=no,status=no,modal=yes"; 
+		//str=window.open("typeEdit.jsp?typeId="+typeId,null,feature); 
+		str=window.open("typeEdit.jsp?typeId="+typeId,"模态对话框","modal=yes,width=200px,height=150px,left="+x+",top="+y+",toolbar=0");
+	 		//window.open("ordersChange.jsp?typeid="+id,"模态对话框","modal=yes,dialogWidth=950px;dialogHeight=400px");
+		alert(111);
+	
+	} 
+	location="AdminCommodityTypeManageServlet?type=update&str="+str+"&typeId="+typeId;
+
+}
+
+</script>
+
+</head>
+
+<body>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td height="30" background="tab/images/tab_05.gif"><table
+					width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="12" height="30"><img src="tab/images/tab_03.gif"
+							width="12" height="30" /></td>
+						<td><table width="100%" border="0" cellspacing="0"
+								cellpadding="0">
+								<tr>
+									<td width="46%" valign="middle"><table width="100%"
+											border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="5%"><div align="center">
+														<img src="tab/images/tb.gif" width="16" height="16" />
+													</div></td>
+												<td width="95%" class="STYLE1"><span class="STYLE3">你当前的位置</span>：[商品管理]-[商品类型管理]</td>
+											</tr>
+										</table></td>
+									<td width="54%"><table border="0" align="right"
+											cellpadding="0" cellspacing="0">
+											<tr>
+												<td align="center"><select onchange="showMsg(this)">
+														<option value="0">所有分类</option>
+
+														<c:forEach items="${requestScope.pTypeList}" var="pType"
+															varStatus="status">
+															<c:if test="${requestScope.parentId==pType.typeId}">
+																<option value="${pType.typeId }" selected="selected">${pType.typeName }</option>
+															</c:if>
+															<c:if test="${requestScope.parentId!=pType.typeId}">
+																<option value="${pType.typeId }">${pType.typeName }</option>
+															</c:if>
+														</c:forEach>
+
+												</select></td>
+
+											</tr>
+										</table></td>
+								</tr>
+							</table></td>
+						<td width="16"><img src="tab/images/tab_07.gif" width="16"
+							height="30" /></td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td><table width="100%" border="0" cellspacing="0"
+					cellpadding="0">
+					<tr>
+						<td width="8" background="tab/images/tab_12.gif">&nbsp;</td>
+						<td><table width="100%" border="0" cellpadding="0"
+								cellspacing="1" bgcolor="b5d6e6" onmouseover="changeto()"
+								onmouseout="changeback()">
+								<tr>
+									<td width="3%" height="22" background="tab/images/bg.gif"
+										bgcolor="#FFFFFF"><div align="center"></div></td>
+									<td width="3%" height="22" background="tab/images/bg.gif"
+										bgcolor="#FFFFFF"><div align="center">
+											<span class="STYLE1">序号</span>
+										</div></td>
+									<td width="18%" height="22" background="tab/images/bg.gif"
+										bgcolor="#FFFFFF"><div align="center">
+											<span class="STYLE1">类型ID</span>
+										</div></td>
+									<td width="12%" height="22" background="tab/images/bg.gif"
+										bgcolor="#FFFFFF"><div align="center">
+											<span class="STYLE1">类型名称</span>
+										</div></td>
+									<td width="14%" height="22" background="tab/images/bg.gif"
+										bgcolor="#FFFFFF"><div align="center">
+											<span class="STYLE1">父类型ID</span>
+										</div></td>
+									<td width="14%" height="22" background="tab/images/bg.gif"
+										bgcolor="#FFFFFF"><div align="center">
+											<span class="STYLE1">父类型名称</span>
+										</div></td>
+									<td width="15%" height="22" background="tab/images/bg.gif"
+										bgcolor="#FFFFFF" class="STYLE1"><div align="center">基本操作</div></td>
+								</tr>
+
+								<c:forEach items="${requestScope.typeList}" var="type"
+									varStatus="status">
+
+									<tr>
+										<td height="20" bgcolor="#FFFFFF"><div align="center">
+												<input type="checkbox" id="ch${status.index }"
+													name="checkbox2" value="checkbox" />
+											</div></td>
+										<td height="20" bgcolor="#FFFFFF"><div align="center"
+												class="STYLE1">
+												<div align="center">${status.index+1}</div>
+											</div></td>
+										<td height="20" bgcolor="#FFFFFF"><div align="center">
+												<span class="STYLE1"><div
+														id="divTypeId${status.index }" align="center">
+														${type.typeId}</div></span>
+											</div></td>
+										<td height="20" bgcolor="#FFFFFF"><div align="center">
+												<span class="STYLE1"><div align="center">
+														${type.typeName}</div> </span>
+											</div></td>
+										<td height="20" bgcolor="#FFFFFF"><div align="center">
+												<span class="STYLE1"><div align="center">
+														${type.parentTypeId }</div></span>
+											</div></td>
+										<td height="20" bgcolor="#FFFFFF"><div align="center">
+												<span class="STYLE1"><div align="center">
+														${type.parentTypeName }</div></span>
+											</div></td>
+										<td height="20" bgcolor="#FFFFFF"><div align="center">
+												<span class="STYLE4"><img src="tab/images/edt.gif"
+													width="16" height="16" /> <a href="#"
+													onclick="edit(divTypeId${status.index})">编辑</a>&nbsp;
+													&nbsp;<img src="tab/images/del.gif" width="16" height="16" />
+													<a
+													href="AdminCommodityTypeManageServlet?type=delete&typeId=${type.typeId}">删除</a></span>
+											</div></td>
+									</tr>
+
+								</c:forEach>
+							</table></td>
+						<td width="8" background="tab/images/tab_15.gif">&nbsp;</td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td height="35" background="tab/images/tab_19.gif"><table
+					width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="12" height="35"><img src="tab/images/tab_18.gif"
+							width="12" height="35" /></td>
+						<td><table width="100%" border="0" cellspacing="0"
+								cellpadding="0">
+								<tr>
+									<td class="STYLE4" width="12%">&nbsp;&nbsp;共有${requestScope.typeListLength }条记录</td>
+									<td width="30%" style="font-size: 12px;" align="left"><a
+										href="#" onclick="checkAll(true)">全选</a>&nbsp;&nbsp; <a
+										href="#" onclick="checkAll(false)">全不选</a>&nbsp;&nbsp;<a
+										href="#" onclick="opsit()">反选</a>&nbsp;&nbsp; <a href="#"
+										onclick="deleteMul() " >批量删除</a>&nbsp;&nbsp;</td>
+									<td width="62%"></td>
+								</tr>
+							</table></td>
+						<td width="16"><img src="tab/images/tab_20.gif" width="16"
+							height="35" /></td>
+					</tr>
+				</table></td>
+		</tr>
+	</table>
+</body>
+</html>

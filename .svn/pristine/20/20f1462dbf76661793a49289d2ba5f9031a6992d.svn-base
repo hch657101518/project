@@ -1,0 +1,18 @@
+package dao;
+
+import java.util.ArrayList;
+
+import entity.QueryGoods;
+
+
+
+
+public class text{
+	public static void main(String[] args) {
+		NewOrderDao nod=new NewOrderDao();
+		ArrayList<QueryGoods> list = nod.findOrderGoods(201);
+		System.out.println(list);
+	}
+ 
+}
+

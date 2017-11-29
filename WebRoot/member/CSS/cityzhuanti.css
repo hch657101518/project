@@ -1,0 +1,85 @@
+﻿@charset "gb2312";
+/* CSS Document */
+
+.zhuanti_body {width:990px;margin:0 auto 10px auto;background:url(images/zhuanti_03.jpg) no-repeat left top;}
+.zhuanti_body .dingkdiv {height:195px;}
+
+.zhuanti_body .allborderbox {border:3px solid #d81616;border-top:none;}
+
+.zhuanti_body .allborderbox .topbanenrtext {color:#e80000;text-align:left;line-height:22px;width:100%;}
+.zhuanti_body .allborderbox .topbanenrtext .left{float:left;width:555px;background:url(images/x.gif) repeat-y right top;padding-right:8px;margin-left:45px;display:inline;}
+.zhuanti_body .allborderbox .topbanenrtext .right{float:right;width:310px;margin-right:46px;display:inline;}
+
+.zhuantibasebox {width:960px;margin:0 auto 0 auto;text-align:left;}
+.zhuantibasebox .title1 {background:url(../images/zhuanti_07.jpg) no-repeat left top;height:40px;}
+.zhuantibasebox .title2 {background:url(../images/zhuanti_10.jpg) no-repeat left top;height:40px;}
+.zhuantibasebox .title3 {background:url(../images/zhuanti_12.jpg) no-repeat left top;height:40px;}
+.zhuantibasebox .title4 {background:url(../images/zhuanti_14.jpg) no-repeat left top;height:40px;}
+.zhuantibasebox .title5 {background:url(../images/zhuanti_16.jpg) no-repeat left top;height:40px;}
+.zhuantibasebox .title6 {background:url(../images/zhuanti_city_01.jpg) no-repeat left top;height:40px;text-align:left;}
+.zhuantibasebox .title7 {background:url(../images/zhuanti_city_02.jpg) no-repeat left top;height:40px;}
+.zhuantibasebox .title8 {background:url(../images/zhuanti_city_03.jpg) no-repeat left top;height:40px;}
+.zhuantibasebox .title9 {background:url(../images/zhuanti_city_04.jpg) no-repeat left top;height:60px;}
+.zhuantibasebox .title10 {background:url(../images/zhuanti_city_05.jpg) no-repeat left top;height:361px;}
+/* .zhuantibasebox .title11 {background:url(../images/zhuanti_city_11.jpg) no-repeat left top;height:40px;} */
+.zhuantibasebox .title11 {background:url(../images/zhuanti_city_11.jpg) no-repeat left center;line-height:36px;text-indent:15px;height:36px;text-align:left;}
+.zhuantibasebox .title11 h2 {padding-left:34px;}
+
+.zhuantibasebox .content {padding:0 0 0 0;}
+
+.ztmore {float:right;font-size:12px;font-weight:normal;padding-right:15px;}
+.ztmore  a {color:#d91616;}
+
+.font_zt {font-weight:bold;font-size:16px;color:#f26522;}
+
+.aboutly {border:0px solid #ccc;padding:18px;text-align:left;line-height:24px;width:960px;}
+.aboutly .text {background:#fff;padding:8px;}
+
+/* CSS Document .aboutly1 {border:1px solid #dddddd;padding:18px;text-align:left;line-height:24px;width:960px;margin:5px auto 5px auto;} http://www.flowercn.com/skins/default/css/cityzhuanti.css*/
+.aboutly1 {border:1px solid #dddddd;text-align:left;line-height:24px;width:960px;margin:5px auto 5px auto;}
+
+.aboutly1 .text {background:#fff;padding:8px;}
+.aboutly1 .leftmemberxx {text-align:center;line-height:16px;color:#666666;}
+.aboutly1 .leftmemberxx .plmba {line-height:26px;color:#185ca9;}
+.aboutly1 .leftmemberxx img {border:1px solid #eeeeee;}
+
+.aboutly1 .righttitle {color:#333;font-weight:bold;line-height:26px;border-bottom:1px solid #ffd5de;height:26px;margin-left:8px;}
+.aboutly1 .righttitle .rdate {float:right;color:#666666;font-weight:normal;height:26px;}
+.aboutly1 .righttitle img {vertical-align:middle;padding-bottom:0px;}
+.aboutly1 .plneirong {color:#000;padding:8px 4px 8px 14px;}
+.aboutly1 .plneirong .color_nrhui {color:#666666;}
+.aboutly1 .plhuifu {width:571px;margin-left:2px;color:#666666;margin-bottom:5px;}
+.aboutly1 .plhuifu .plhuifu_t {background:url(../images/pl5.jpg) no-repeat left top;height:5px;font-size:1px;line-height:1px;}
+.aboutly1 .plhuifu .plhuifu_c {background:url(../images/pl7.jpg) repeat-y left top;padding:0 8px 0 8px;}
+.aboutly1 .plhuifu .plhuifu_b {background:url(../images/pl6.jpg) no-repeat left top;height:5px;font-size:1px;line-height:1px;}
+.aboutly1 .plhuifu .tname {color:#d41515;}
+.aboutly1 .plhuifu .tdate {color:#cccccc;}
+.aboutly1 .jticobox {margin-left:-17px;position:absolute;width:15px;height:22px;background:url(../images/pl2.jpg) no-repeat left top;}
+.aboutly1 .plcbg {background:url(../images/plcxbg.jpg) no-repeat center bottom;}
+
+.pro_nbox3 {text-align:center;line-height:18px;font-size:12px;width:162px;float:left;display:inline;overflow:hidden;height:265px;margin:5px 10px 0 10px;}
+.pro_nbox3 .old_price {text-decoration:line-through;color:#666666;}
+.pro_nbox3 .now_price {font-family:Arial, Helvetica, sans-serif;}
+.pro_nbox3  .imgtop img {border:1px solid #e6e6e6;width:160px;height:170px;margin-bottom:4px;}
+.pro_nbox3 a {color:#666666;font-size:12px;line-height:23px;font-weight:bold;}
+.pro_nbox3 a:hover {color:#d91616;text-decoration:underline;}
+.pro_nbox3 .imgtop a:hover img {border:1px solid #cbcbcb;}
+.pro_nbox3 .proritext {width:100px;float:right;}
+.pro_nbox3 .btnbox {padding:2px 0 2px 0;}
+.pro_nbox3 .btnbox img {margin-left:5px;}
+
+
+.autohlist{background:#fff;display:block;padding:0 0 0 0;}
+.autohlist span {float:left;padding:1px 3px 1px 3px;word-break:normal;width:auto;display:block;white-space:nowrap;
+background:url(../images/dian.jpg) no-repeat 1px center;width:125px;padding-left:13px;}
+.autohlist span a {font-weight:normal;display:block;color:#333333;}
+.autohlist span a:hover {color:#d91616;}
+.autohlist span .color_tj {color:#d91616;}
+
+.ztbottomimgbox {height:148px;width:984px;margin:0 auto;}
+
+.ul11 {}
+.ul11 li {color:#000;font-size:12px;padding-left:10px;line-height:28px;}
+.ul11 li a {color:#000;}
+
+.ul11 li a:hover {color:#e63922;}

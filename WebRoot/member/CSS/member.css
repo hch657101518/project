@@ -1,0 +1,98 @@
+.body_content {width:990px;margin:0 auto 10px auto;text-align:left;color:#61645a;line-height:24px;}
+.inside_box {}
+.inbasebox_L {float:left;width:174px;}
+.inbasebox_R {float:left;width:816px;}
+.inbasebox_R .topht {background:url(../Images/mb_rico1.jpg) no-repeat left top;height:9px;line-height:1px;font-size:1px;}
+.inbasebox_R .bottomht {background:url(../Images/mb_rico2.jpg) no-repeat left top;height:9px;line-height:1px;font-size:1px;}
+.leftbottom {background:url(../Images/mb_ico12.jpg) no-repeat left top;line-height:1px;height:8px;}
+
+.leftmenubox {padding-top:15px;}
+.leftmenubox .toptitlemenu {background:url(../Images/member_menubg.jpg) no-repeat left top;height:31px;line-height:31px;text-align:center;font-size:14px;font-weight:bold;color:#1e2604;}
+.leftmenubox .toptitlemenu2 {border-left:1px solid #d7d7d7;line-height:30px;text-align:center;}
+.leftmenubox .menustart h3 {display:block;background:url(../Images/member_menubg.jpg) no-repeat right -31px;height:31px;line-height:31px;text-align:left;padding-left:15px;font-size:13px;font-weight:bold;color:#3a4d04;}
+.leftmenubox .menustart {display:block;border-left:1px solid #d7d7d7;}
+.leftmenubox dl {display:block;height:auto;padding:3px 0 3px 0;}
+.leftmenubox dl dt {line-height:14px;display:block;padding:6px 0 6px 0;}
+.leftmenubox dl dt a {display:block;line-height:14px;padding-left:35px;background:url(../Images/ico39.jpg) no-repeat 15px center;font-size:12px;text-align:left; text-decoration:none;font-weight:normal;}
+.leftmenubox dl dt a:hover {display:block;line-height:14px;font-size:12px;text-align:left; text-decoration:none;}
+.leftmenubox dl .andtdiv {padding:3px 0 5px 0;}
+.leftmenubox dl .border_bnone {background:none;}
+.leftmenubox dl dt .online_server {background:none;padding-left:0px;text-align:center;}
+.leftmenubox dl dt .online_server:hover {background:none;padding-left:0px;text-align:center;}
+.leftmenubox dl dt .loginout {background:none;padding-left:0px;text-align:center;line-height:20px;font-weight:bold;color:#1e2604;}
+.leftmenubox dl dt .loginout:hover {background:none;padding-left:0px;text-align:center;line-height:20px;color:#bf1510;}
+.leftmenubox dl dt .loginout img {vertical-align:middle;}
+
+
+.member_rightbox {border:1px solid #dddddd;border-top:none;border-bottom:none;line-height:24px;height:auto !important;height:605px;min-height:605px;max-height:auto;}
+.member_rightbox h3 {display:block;height:38px;line-height:38px;font-size:14px;color:#425F07;font-weight:bold;background:url(../Images/box_title17.jpg) no-repeat left top;text-align:left;overflow:hidden;padding-left:15px;}
+.member_rightbox h3 a {color:#425F07;}
+.member_rightbox .content {padding:10px 20px 20px 20px;text-align:left;}
+.member_rightbox h4 {display:block;background:url(../Images/mb_rttbg.jpg) no-repeat center bottom;height:31px;line-height:31px;font-size:14px;font-weight:bold;color:#000000;margin:20px auto 20px auto;text-align:center;}
+.member_rightbox .incontent {margin:0 auto;}
+
+.wellcomeinfo {color:#61645a;font-weight:bold;margin:0 auto;}
+
+.table_base {}
+.table_base td {line-height:24px;padding:5px 3px 5px 3px;}
+
+
+.input1 {width:300px;border:1px solid #CCCCCC;padding:3px 2px 2px 2px;line-height:16px;background:url(../Images/input_bg1.gif) repeat-x left top;height:18px;}
+
+.editTextarea1{
+	border:1px solid #ccc;
+	font-size:12px;
+	height:100px;
+	overflow:auto;
+    width:300px;
+	padding:3px;
+	background:url(../Images/input_bg1.gif) repeat-x left top;
+}
+.btn1 {width:94px;height:35px;cursor:pointer;line-height:35px;background:url(../Images/btn_bg1.jpg) no-repeat left top;border:none;font-weight:bold;}
+.btn2 {width:94px;height:35px;cursor:pointer;line-height:35px;background:url(../Images/btn_bg2.jpg) no-repeat left top;border:none;font-weight:bold;}
+.table_base {border:1px solid #CCCCCC;}
+.table_base table td {border-bottom:1px solid #ccc;padding:3px 2px 3px 2px;}
+.table_base .tntitle {background:url(../Images/table_tbg.gif) repeat-x left center;}
+
+.table_base2 {}
+.table_base2 table td {padding:3px 2px 3px 2px;background:url(../Images/line2.gif) repeat-x left bottom;}
+
+
+.textul1 {}
+.textul1 li {background:url(../Images/dian4.gif) no-repeat left center;padding-left:8px;}
+
+.wxtsbox {background:url(../Images/xing3.gif) no-repeat left 5px;padding-left:18px;color:#58b20f;}
+
+.wendabox {}
+.wendabox .wen {background:url(../Images/ico57.jpg) no-repeat left center;padding-left:25px;font-weight:bold;height:24px;line-height:24px;}
+.wendabox .da {padding-left:25px;}
+
+.onlinelybody {width:990px;margin:0 auto 10px auto;}
+.onlinelybody .lltitle {height:49px;line-height:49px;text-align:center;background:url(../Images/guestbook_tbg.jpg) no-repeat left center;font-size:14px;font-weight:bold;}
+.onlinelybody .linebox {border:1px solid #dddddd;border-top:none;}
+.onlinelybody .linebox .incontent {padding:10px;}
+.onlinelybody .linebox .incontent td .textdiv {line-height:25px;text-align:left;padding:10px 0 2px 0;color:#666666;}
+.onlinelybody .linebox .incontent td .textdiv  a {color:#d81616;text-decoration:underline;}
+.onlinelybody .linebox .incontent td {padding-top:5px;padding-bottom:5px;}
+
+.lyinput {border:1px solid #CCCCCC;padding:0px 5px 0px 5px;color:#666;width:225px;height:24px;line-height:24px;margin-bottom:4px;}
+.lyinput2 {border:1px solid #CCCCCC;padding:0px 5px 0px 5px;color:#666;width:540px;height:130px;line-height:24px;margin-bottom:4px;}
+
+.lypost_btn2 {width:111px;height:31px;line-height:31px;border:none;background:url(../Images/postbtn15.jpg) no-repeat left top;cursor:pointer;font-size:14px;}
+.lypost_btn3 {width:91px;height:31px;line-height:31px;border:none;background:url(../Images/postbtn15.jpg) no-repeat -120px top;cursor:pointer;font-size:14px;}
+
+
+/*.carbodybox {width:990px;margin:0 auto;}
+.carbodybox .content{width:881px;margin:0 auto;}
+
+.car5boxall {padding-top:10px;}
+.car5box1 {border:1px solid #e2e2e2;margin-bottom:10px;text-align:left;}
+
+.car5box1 .title1 {border-top:1px solid #e2e2e2;border-bottom:1px solid #e2e2e2;background:url(../Images/carttbg2.jpg) repeat-x left top;line-height:28px;height:28px;text-align:center;font-weight:bold;color:#333333;}
+.car5box1 .c5incontent {padding:10px 15px 10px 15px;text-align:left;line-height:24px;}
+.car5box1 .c5incontent h4 {display:block;background:url(../Images/icojt_55.gif) no-repeat left center;padding-left:15px;color:#e47500;font-weight:bold;}
+.wsxulinebox {;background:url(../Images/xunline3.gif) repeat-x left center;height:10px;}
+.wspaybox {padding-bottom:10px;}
+.wstitle {background:#f4ffda;font-weight:bold;margin:5px 0 5px 0;padding:5px;}
+.wstitle img {vertical-align:middle;}
+.wscontent {padding-left:8px;}*/

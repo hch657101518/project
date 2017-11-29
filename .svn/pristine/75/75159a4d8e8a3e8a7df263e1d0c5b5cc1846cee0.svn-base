@@ -1,0 +1,103 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import entity.NewOrders;
+
+
+
+
+public class NewOrderDao {
+	
+	DBconn dbconn=new DBconn();
+	
+	public NewOrderDao() {
+		 dbconn.getConn();
+	}
+	
+	
+	//删除订单,用户支付失败时将生成的订单删除
+	public int deleteOrder(String orderId){
+		String sql1="delete from ordersdet where ordersId=?";
+		String sql="delete from orders where ordersId=?";
+		String[] pras={orderId};
+		int j=0;
+			int i = dbconn.update(sql1, pras);
+			if(i!=0){
+				j = dbconn.update(sql, pras);
+			}
+		return j;
+	}
+	
+	//根据订单号查询订单
+	public ResultSet findOrder(String orderId){
+		String sql="select * from orders where ordersId=?";
+		NewOrders no=new NewOrders();
+		String[] pras={orderId};
+		ResultSet set = dbconn.query(sql, pras);
+		try {
+			while(set.next()){
+			
+				no.setOrdersId(set.getInt("ordersid"));
+				no.setMemberId(set.getInt("memberid"));
+				no.setOrdersName(set.getString("ORDERSNAME"));
+				no.setOrdersPhone(set.getString("ORDERSPHONE"));
+				no.setOrdersAdress(set.getString("ORDERSADRESS"));
+				no.setOrders_To_name(set.getString("ORDERS_TO_NAME"));
+				no.setOrders_To_tel(set.getString("ORDERS_TO_PHONE"));
+				no.setOrders_To_adress(set.getString("ORDERS_TO_ADRESS"));
+				no.setOrdersExpense(set.getDouble(("ORDERSEXPENSE"));
+				no.setOrders_Del_datetime(set.get);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+		
+		return set;
+	}
+	
+	//根据用户查询商品
+	public ArrayList<QueryGoods> findOrderGoods(String memberId){
+		String sql="select * from orders where memberId=? order by Orders_ord_time";
+		String sql1="select * from ordersdet where ordersid=?";
+		String sql2="select * from commodity where commodityid=?";
+		String[] pras={memberId};
+		
+		String[] pras2=null;
+		
+			ResultSet set = dbconn.query(sql, pras);
+			while(set.next()){
+				String ordersId = set.getString(1);
+				String[] pras1={ordersId};
+				ResultSet set1 = dbconn.query(sql1, pras1);
+				while(set1.next()){
+					set1.getString(columnIndex)
+					params2.add(det.getCommodityId());
+					List<Commodity> result = jdbc.findMoreRefResult(sql2, params2, Commodity.class);
+					for(int x=0;x<result.size();x++){
+						Commodity commodity = result.get(x);
+						QueryGoods newGoods = new QueryGoods();
+						newGoods.setCommodityId(commodity.getCommodityId());
+						newGoods.setCommodityName(commodity.getCommodityName());
+						newGoods.setCommoditydetail(commodity.getCommodityDetail());
+						newGoods.setCommodityMarketPrice(commodity.getCommodityMarketPrice());
+						newGoods.setOrders_ord_time(order.getOrders_Ord_datetime());
+						newGoods.setOrdersStatus(Integer.valueOf(order.getOrdersStatus()));
+						list.add(newGoods);
+					}
+					
+				}
+			}
+			
+		
+		return list;
+	}
+	
+	
+	
+}

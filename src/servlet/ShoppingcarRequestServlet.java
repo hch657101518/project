@@ -1,0 +1,84 @@
+package servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import util.FlowerUtil;
+
+import dao.CarDao;
+
+import entity.Member;
+import entity.ShoppingCar;
+import entity.ShoppingItem;
+
+public class ShoppingcarRequestServlet extends HttpServlet{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private CarDao dao=new CarDao();
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//super.service(req, resp);
+		req.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/json;charset=UTF-8");
+		 PrintWriter out = resp.getWriter();
+		String[] cids = req.getParameterValues("carid");
+		HttpSession session = req.getSession(true);
+		Integer mid = ((Member)session.getAttribute("loginMember")).getMemberId();
+		if(cids==null){
+			out.println("<script>$(function(){alert('购物车没勾选');});</script>");
+			resp.sendRedirect("ShoppingCarServlet?cmd=list&log=1&userId="+String.valueOf(mid));
+			
+		}else
+		
+//		HashMap<Integer, ShoppingCar> shopcar = (HashMap<Integer, ShoppingCar>) session
+//				.getAttribute(FlowerUtil.SESSION_SHOPPING);
+//		if(shopcar==null){
+//			//购物车不存在
+//			//创建购物车对象
+//			shopcar=new HashMap<Integer,ShoppingCar>();
+//			
+//		}
+		
+		{
+			ArrayList<ShoppingCar> carlist = new ArrayList<ShoppingCar>();
+		for (String cidstr : cids) {
+			
+			ShoppingCar car = dao.querysimpleshopInf(String.valueOf(mid),cidstr);
+			carlist.add(car);		
+		}
+		session.setAttribute("carlist",carlist);
+		resp.sendRedirect("/Flower/member/send_info.jsp");
+		//删除购物车里面已提交的内容
+//		CarDao cardao = new CarDao();
+//		for (String cidstr : cids) {
+//			
+//    	  cardao.deteleshopingCar(String.valueOf(mid), cidstr);
+//    	  System.out.println("我的购物车删除提交的数据");
+//				
+//		};
+		
+		
+		
+		}
+		
+		
+		
+		
+		
+	}
+	
+
+}

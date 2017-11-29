@@ -1,0 +1,73 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>广告时间</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+	<script type="text/javascript" src="alipay/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="alipay/js/alipay_return.js"></script>
+	<link rel="stylesheet" type="text/css" href="alipay/css/alipay_return.css">
+	
+
+  </head>
+  
+  <body  onload="showColor()">
+  	<div id="header">
+  		<h1>花花花花花花花花花</h1>
+  	</div>
+  	
+  	<div>
+  	<marquee id="marqueeImg">
+  		<img onmousemove="stopMarquee()" onmouseout="startMarquee()" alt="###" src="alipay/image/1090020_m.jpg" >&emsp;&emsp;&emsp;
+  		<img onmousemove="stopMarquee()" onmouseout="startMarquee()" alt="###" src="alipay/image/20114161723956860.jpg">&emsp;&emsp;&emsp;
+  		<img onmousemove="stopMarquee()" onmouseout="startMarquee()" alt="###" src="alipay/image/201172517363443296.jpg">&emsp;&emsp;&emsp;
+  		<img onmousemove="stopMarquee()" onmouseout="startMarquee()" alt="###" src="alipay/image/5010020_m.jpg">&emsp;&emsp;&emsp;
+  		<img onmousemove="stopMarquee()" onmouseout="startMarquee()" alt="###" src="alipay/image/201261317151419394.jpg">&emsp;&emsp;&emsp;
+  	</marquee>
+  	</div>
+  	
+  	
+  	
+  	<div id="main">
+  	  <div id="box1">
+  	  	<h2><a style="color: red">支付成功</a>,花儿正在赶路</h2>
+  	  	<div>
+  	  		<img  style="width: 550px; height: 350px;" alt="###" src="alipay/image/inRoad.jpg">
+  	  	</div>
+  	  </div>
+  	
+  	  <div id="note_rollImg">
+  		<h3>脱单攻略</h1>
+  	  </div>
+  	
+  	  <div id="rollImg">
+    		<img id="outOne" alt="###" src="alipay/image/outSingle1.jpg" onmousemove="stopImg()" onmouseout="showImg()">
+  	  </div>
+  	  
+  	  
+  	  
+	  <ul id="imgNumber">
+    		<li id="li1"><a href="javascript:linkTo(1)">1</a></li>
+    		<li id="li2"><a href="javascript:linkTo(2)">2</a></li>
+    		<li id="li3"><a href="javascript:linkTo(3)">3</a></li>
+    		<li id="li4"><a href="javascript:linkTo(4)">4</a></li>
+    		<li id="li5"><a href="javascript:linkTo(5)">5</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

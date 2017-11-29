@@ -1,0 +1,76 @@
+package entity;
+
+import java.util.Date;
+
+public class QueryGoods {
+	private long commodityId;
+	private String commodityName;
+	private String commoditydetail;
+	private double commodityMarketPrice;
+	private String Orders_ord_time;
+	private int ordersStatus;
+	public QueryGoods() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public QueryGoods(long commodityId, String commodityName,
+			String commoditydetail, double commodityMarketPrice,
+			String orders_ord_time, int ordersStatus) {
+		super();
+		this.commodityId = commodityId;
+		this.commodityName = commodityName;
+		this.commoditydetail = commoditydetail;
+		this.commodityMarketPrice = commodityMarketPrice;
+		Orders_ord_time = orders_ord_time;
+		this.ordersStatus = ordersStatus;
+	}
+	public long getCommodityId() {
+		return commodityId;
+	}
+	public void setCommodityId(long commodityId) {
+		this.commodityId = commodityId;
+	}
+	public String getCommodityName() {
+		return commodityName;
+	}
+	public void setCommodityName(String commodityName) {
+		this.commodityName = commodityName;
+	}
+	public String getCommoditydetail() {
+		return commoditydetail;
+	}
+	public void setCommoditydetail(String commoditydetail) {
+		this.commoditydetail = commoditydetail;
+	}
+	public double getCommodityMarketPrice() {
+		return commodityMarketPrice;
+	}
+	public void setCommodityMarketPrice(double commodityMarketPrice) {
+		this.commodityMarketPrice = commodityMarketPrice;
+	}
+	public String getOrders_ord_time() {
+		return Orders_ord_time;
+	}
+	public void setOrders_ord_time(String orders_ord_time) {
+		Orders_ord_time = orders_ord_time;
+	}
+	public int getOrdersStatus() {
+		return ordersStatus;
+	}
+	public void setOrdersStatus(int ordersStatus) {
+		this.ordersStatus = ordersStatus;
+	}
+	@Override
+	public String toString() {
+		return "QueryGoods [commodityId=" + commodityId + ", commodityName="
+				+ commodityName + ", commoditydetail=" + commoditydetail
+				+ ", commodityMarketPrice=" + commodityMarketPrice
+				+ ", Orders_ord_time=" + Orders_ord_time + ", ordersStatus="
+				+ ordersStatus + "]";
+	}
+	
+	
+	
+	
+	
+}

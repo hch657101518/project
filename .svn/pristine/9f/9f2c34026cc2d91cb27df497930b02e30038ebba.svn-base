@@ -1,0 +1,114 @@
+package servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import util.FlowerUtil;
+import dao.OrdersDao;
+import dao.OrdersDelDao;
+import entity.Orders;
+import entity.OrdersDet;
+import entity.ShoppingItem;
+
+public class MemberOrder_SendServlet extends HttpServlet {
+
+	/**
+	 * The doGet method of the servlet. <br>
+	 *
+	 * This method is called when a form has its tag value method equals to get.
+	 * 
+	 * @param request the request send by the client to the server
+	 * @param response the response send by the server to the client
+	 * @throws ServletException if an error occurred
+	 * @throws IOException if an error occurred
+	 */
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		doPost(request,response);
+	}
+
+	/**
+	 * The doPost method of the servlet. <br>
+	 *
+	 * This method is called when a form has its tag value method equals to post.
+	 * 
+	 * @param request the request send by the client to the server
+	 * @param response the response send by the server to the client
+	 * @throws ServletException if an error occurred
+	 * @throws IOException if an error occurred
+	 */
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html;charset=utf-8");
+		request.setCharacterEncoding("utf-8");
+		PrintWriter out = response.getWriter();
+		String ordersName=request.getParameter("ordersName");//订购人的姓名
+		String ordersPhone=request.getParameter("ordersPhone");//订购人电话
+		String ordersAdress=request.getParameter("ordersAdress");//订购人地址
+		String ordersToName=request.getParameter("orders_To_name");
+		String orders_To_tel=request.getParameter("orders_To_tel");
+		String orders_To_adress=request.getParameter("orders_To_adress");
+		String ordersExpense=request.getParameter("ordersExpense");
+		String orders_Dis_server=request.getParameter("orders_Dis_server");
+		String ordersMessage=request.getParameter("ordersMessage");
+		String orders_Ppay_type=request.getParameter("orders_Ppay_type");
+		String signName=request.getParameter("signName");
+		String memberQuest=request.getParameter("memberQuest");
+		String memberId=request.getParameter("memberId");
+		String orders_Del_datetime=request.getParameter("orders_Del_datetime");
+		String orderssTotal=request.getParameter("orderssTotal");
+		
+		Orders orders = new Orders();
+		orders.setOrdersName(ordersName);
+		orders.setOrdersPhone(ordersPhone);
+		orders.setOrdersAdress(ordersAdress);
+		orders.setOrders_To_name(ordersToName);
+		orders.setOrders_To_tel(orders_To_tel);
+		orders.setOrders_To_adress(orders_To_adress);
+		orders.setOrdersExpense(Double.parseDouble(ordersExpense));
+		orders.setOrders_Dis_server(orders_Dis_server);
+		orders.setOrdersMessage(ordersMessage);
+		orders.setOrders_Ppay_type(orders_Ppay_type);
+		orders.setSignName(signName);
+		orders.setMemberQuest(memberQuest);
+		orders.setMemberId(Integer.parseInt(memberId));
+		orders.setOrders_Del_datetime(orders_Del_datetime);
+		orders.setOrderssTotal(Double.parseDouble(orderssTotal));
+		orders.setOrdersPaymen("0");
+		orders.setOrdersStatus("1");
+		
+		//添加订单
+		OrdersDao ordersDao = new OrdersDao();
+		int ordersId = ordersDao.addOrders(orders);
+		
+		HttpSession session = request.getSession();
+		HashMap<Integer, ShoppingItem> shopcart =  (HashMap<Integer, ShoppingItem>) session.getAttribute(FlowerUtil.SESSION_SHOPPING);
+		
+		//添加订单详情到订单详情表
+		OrdersDet  detail = new OrdersDet();
+		OrdersDelDao detailDao = new OrdersDelDao();
+		for (int i : shopcart.keySet()) {
+			detail.setOrdersID(ordersId);
+			detail.setCommodityId(shopcart.get(i).getId());
+			detail.setOrdersDetNum((shopcart.get(i).getNum()));
+			detail.setOrdersDetPic((shopcart.get(i).getPresentPrice()));
+			detailDao.add(detail);
+		}
+		
+		request.setAttribute("ordersId", ordersId);
+		request.getRequestDispatcher("pay.jsp").forward(request, response);
+		
+		out.flush();
+		out.close();
+	}
+
+}

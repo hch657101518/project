@@ -1,0 +1,30 @@
+package dao;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import util.JDBCUtils;
+
+import entity.Commodity;
+import entity.NewOrders;
+import entity.Orders;
+import entity.OrdersDet;
+import entity.QueryGoods;
+
+
+
+
+public class text{
+	public static void main(String[] args) throws Exception {
+		NewOrderDao nod=new NewOrderDao();
+		ResultSet set = nod.findOrder("257");
+		while(set.next()){
+			String i = set.getString(3);
+			System.out.println(i);
+		}
+		
+	}
+ 
+}
+
